@@ -1,39 +1,65 @@
-<html>
-<head>
-  <title>여행 계획 세우기</title>
-  <style>
-    /* CSS 스타일링 */
-    /* ... */
-  </style>
-</head>
-<body>
-  <h1>여행 계획 세우기</h1>
+html
+head
+  title여행 계획 세우기title
+  style
+     CSS 스타일링 
+     ... 
+  style
+head
+body
+  h1여행 계획 세우기h1
 
-  <form id="travelForm">
-    <label for="destination">가고 싶은 지역:</label>
-    <input type="text" id="destination" required><br><br>
+  form id=travelForm
+    label for=destination가고 싶은 지역label
+    input type=text id=destination requiredbrbr
 
-    <label for="interests">평소 가보고 싶었던 곳:</label>
-    <input type="text" id="interests" required><br><br>
+    label for=interests평소 가보고 싶었던 곳label
+    input type=text id=interests requiredbrbr
 
-    <label for="duration">여행 기간:</label>
-    <input type="number" id="duration" required> 일<br><br>
+    label for=duration여행 기간label
+    input type=number id=duration required 일brbr
 
-    <label for="budget">예산:</label>
-    <input type="number" id="budget" required> 원<br><br>
+    label for=budget예산label
+    input type=number id=budget required 원brbr
 
-    <label for="activities">선호하는 활동:</label><br>
-    <input type="checkbox" id="nature" value="자연 탐험">
-    <label for="nature">자연 탐험</label><br>
-    <input type="checkbox" id="history" value="역사 탐방">
-    <label for="history">역사 탐방</label><br>
-    <input type="checkbox" id="food" value="음식 체험">
-    <label for="food">음식 체험</label><br><br>
+    label for=activities선호하는 활동labelbr
+    input type=checkbox id=nature value=자연 탐험
+    label for=nature자연 탐험labelbr
+    input type=checkbox id=history value=역사 탐방
+    label for=history역사 탐방labelbr
+    input type=checkbox id=food value=음식 체험
+    label for=food음식 체험labelbrbr
 
-    <button type="submit">계획 세우기</button>
-  </form>
+    button type=submit계획 세우기button
+  form
 
-  <div id="planResult" style="display: none;">
-    <h2>여행 계획</h2>
-    <p id="planText"></p>
-  </div>
+  div id=planResult style=display none;
+    h2여행 계획h2
+    p id=planTextp
+  div
+
+  script
+     JavaScript 코드
+    const form = document.getElementById('travelForm');
+    const resultDiv = document.getElementById('planResult');
+    const planText = document.getElementById('planText');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+       사용자 입력 가져오기
+      const destination = document.getElementById('destination').value;
+      const interests = document.getElementById('interests').value;
+      const duration = document.getElementById('duration').value;
+      const budget = document.getElementById('budget').value;
+      const activities = [];
+      const checkboxes = document.querySelectorAll('input[type=checkbox]checked');
+      checkboxes.forEach(function(checkbox) {
+        activities.push(checkbox.value);
+      });
+
+       ChatGPT와 연동하여 계획 세우기 요청
+      const plan = generateTravelPlan(destination, interests, duration, budget, activities);
+
+       결과 표시
+      planText.textContent
