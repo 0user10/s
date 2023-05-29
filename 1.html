@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>여행 계획 세우기</title>
+  <style>
+    /* CSS 스타일링 */
+    /* ... */
+  </style>
+</head>
+<body>
+  <h1>여행 계획 세우기</h1>
+
+  <form id="travelForm">
+    <label for="destination">가고 싶은 지역:</label>
+    <input type="text" id="destination" required><br><br>
+
+    <label for="interests">평소 가보고 싶었던 곳:</label>
+    <input type="text" id="interests" required><br><br>
+
+    <label for="duration">여행 기간:</label>
+    <input type="number" id="duration" required> 일<br><br>
+
+    <label for="budget">예산:</label>
+    <input type="number" id="budget" required> 원<br><br>
+
+    <label for="activities">선호하는 활동:</label><br>
+    <input type="checkbox" id="nature" value="자연 탐험">
+    <label for="nature">자연 탐험</label><br>
+    <input type="checkbox" id="history" value="역사 탐방">
+    <label for="history">역사 탐방</label><br>
+    <input type="checkbox" id="food" value="음식 체험">
+    <label for="food">음식 체험</label><br><br>
+
+    <button type="submit">계획 세우기</button>
+  </form>
+
+  <div id="planResult" style="display: none;">
+    <h2>여행 계획</h2>
+    <p id="planText"></p>
+  </div>
